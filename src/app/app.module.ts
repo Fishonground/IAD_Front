@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { RegpageComponent } from './regpage/regpage.component';
 import {RouterModule, Routes} from "@angular/router";
+import {FormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HttpClientModule} from "@angular/common/http";
+
+
 
 const appRoutes: Routes =[
   { path: '', component: AppComponent},
   { path: 'main', component: MainComponent},
-  { path: 'login', component: RegpageComponent},
-  //{ path: '**', component: NotFoundComponent }
+  { path: 'login', component: RegpageComponent}
 ];
 
 @NgModule({
@@ -23,7 +27,10 @@ const appRoutes: Routes =[
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    FormsModule,
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

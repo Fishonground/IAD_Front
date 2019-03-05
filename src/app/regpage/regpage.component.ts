@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-regpage',
@@ -12,7 +12,7 @@ export class RegpageComponent implements OnInit {
   ngOnInit() {
   }
 
-}
+}*/
 /*import {Component, OnInit} from '@angular/core';
 import { HttpService} from '../http.service';
 import {Augth} from "../Augth";
@@ -42,3 +42,49 @@ export class RegpageComponent implements OnInit{
   }
 }
 */
+import { Component, OnInit} from '@angular/core';
+import { HttpService} from '../http.service';
+import {User} from './user';
+
+@Component({
+  selector: 'app-regpage',
+  templateUrl: './regpage.component.html',
+  styleUrls: ['./regpage.component.css'],
+  providers: [HttpService]
+})
+export class RegpageComponent implements OnInit{
+  ngOnInit(){
+
+  }
+  /*check(string pass){
+    var Reg62 = new RegExp("^[^\`\\\}\{\^}][A-zА-я]{6,16}$"); //2
+
+    if(pass1!='')
+      {
+        if(Reg62.test(pass1))
+        {
+          //alert('Тест пройден.');
+          $('#username').text("Тест пройден.");
+        }
+        else
+        {
+          //alert('Тест не пройден.');
+          $('#password').text("Тест не пройден.");
+        }
+      }
+    });
+  }*/
+
+  user: User=new User(); // данные вводимого пользователя
+
+  receivedUser: User; // полученный пользователь
+  done: boolean = false;
+  constructor(private httpService: HttpService){}
+  submit(user: User){
+    this.httpService.postData(user)
+      .subscribe(
+        (data: User) => {this.receivedUser=data; this.done=true;},
+        error => console.log(error)
+      );
+  }
+}
