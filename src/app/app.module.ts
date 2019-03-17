@@ -16,6 +16,14 @@ import { ContcontComponent } from './contcont/contcont.component';
 import { ContmainComponent } from './contmain/contmain.component';
 import { GameComponent } from './game/game.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { OrdersComponent } from './gamecomp/orders/orders.component';
+import { FactionsComponent } from './gamecomp/factions/factions.component';
+import { PrisonersComponent } from './gamecomp/prisoners/prisoners.component';
+import { UsersComponent } from './gamecomp/users/users.component';
+import { RoomsComponent } from './gamecomp/rooms/rooms.component';
+import { MessagesComponent } from './gamecomp/messages/messages.component';
+import { ShopComponent } from './gamecomp/shop/shop.component';
+import { ThingsComponent } from './gamecomp/things/things.component';
 
 
 
@@ -41,7 +49,15 @@ const appRoutes: Routes =[
     ContcontComponent,
     ContmainComponent,
     GameComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    OrdersComponent,
+    FactionsComponent,
+    PrisonersComponent,
+    UsersComponent,
+    RoomsComponent,
+    MessagesComponent,
+    ShopComponent,
+    ThingsComponent
   ],
   imports: [
     BrowserModule,
