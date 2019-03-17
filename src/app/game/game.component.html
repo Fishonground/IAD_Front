@@ -1,3 +1,87 @@
-<p>
-  Hello, what's about some pipa?
-</p>
+<article class="main-page to-left">
+  <p>
+    Hello, what's about some pipa?
+  </p>
+  <p>
+    <button (click)="b1()" class="login100-form-btn">
+      Заказы
+    </button>
+    <button (click)="b2()" class="login100-form-btn">
+      Фракции
+    </button>
+    <button (click)="b3()" class="login100-form-btn">
+      Заключенные
+    </button>
+    <button (click)="b4()" class="login100-form-btn">
+      Юзвери
+    </button>
+    <button (click)="b5()" class="login100-form-btn">
+      Комнаты
+    </button>
+    <button (click)="b6()" class="login100-form-btn">
+      Сообщения
+    </button>
+    <button (click)="b7()" class="login100-form-btn">
+      Магазин
+    </button>
+    <button (click)="b8()" class="login100-form-btn">
+      Вещи
+    </button>
+    <button (click)="b9()" class="login100-form-btn">
+      TEST
+    </button>
+  </p>
+
+  <img border="5px" width="648px" src="../assets/prison1.jpg">
+  <!---->
+  <!--<div *ngIf="isOrders">-->
+    <!--<app-news></app-news>-->
+    <!--<p> AAAAAA </p>-->
+  <!--</div>-->
+
+
+  <!--<div *ngIf="isFaction">-->
+    <!--<app-news></app-news>-->
+    <!--<p> BBBBB </p>-->
+  <!--</div>-->
+
+
+  <!--<div *ngIf="isPrisoners">-->
+    <!--<app-news></app-news>-->
+    <!--<p> CCCCC </p>-->
+  <!--</div>-->
+
+  <div [ngSwitch]="but">
+    <ng-template ngSwitchCase="Orders">
+      <p> Orders </p>
+    </ng-template>
+    <ng-template ngSwitchCase="Factions">
+      <p> Faction:  </p>
+    </ng-template>
+    <ng-template ngSwitchCase="Prisoners">
+      <p> Prisoners: </p>
+    </ng-template>
+    <ng-template ngSwitchCase="Users">
+      <p> Users:  </p>
+    </ng-template>
+    <ng-template ngSwitchCase="Rooms">
+      <p> Rooms: </p>
+    </ng-template>
+    <ng-template ngSwitchCase="Mails">
+      <p> Mails:  </p>
+    </ng-template>
+    <ng-template ngSwitchCase="Shop">
+      <p> Shop: </p>
+    </ng-template>
+    <ng-template ngSwitchCase="Things">
+      <p> Things:  </p>
+    </ng-template>
+    <ng-template ngSwitchCase="TEST">
+      <p> Dorou? Have u sm pipa? Hard thing! </p>
+    </ng-template>
+    <ng-template ngSwitchDefault>
+      <p> You should choose smth!! </p>
+    </ng-template>
+  </div>
+
+</article>

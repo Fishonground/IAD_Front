@@ -17,6 +17,7 @@ export class MainComponent implements OnInit {
   aboutasp = false;
   mainp=false;
   contactp=false;
+  ddate = this.temp_date.getDate();
 
   constructor() { }
 
