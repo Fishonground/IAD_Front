@@ -1,0 +1,20 @@
+<p>
+  news works!
+
+  <button (click)="reload()" class="login100-form-btn">
+    Обновить новостную ленту!
+  </button>
+
+</p>
+
+<ul>
+  <li *ngFor="let receivedNew of receivedNews">
+    <p>New's title: {{receivedNew?.name}}</p>
+    <p>New's text: {{receivedNew?.text}}</p>
+    <p>Cam's ID: {{receivedNew?.video}}</p>
+  </li>
+</ul>
+<div>
+
+  <!--<p>{{receivedNews[0].name}}   {{receivedNews[0].text}}    {{receivedNews[0].video}}</p>-->
+</div>
