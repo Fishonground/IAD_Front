@@ -15,6 +15,7 @@ import { ContabusComponent } from './contabus/contabus.component';
 import { ContcontComponent } from './contcont/contcont.component';
 import { ContmainComponent } from './contmain/contmain.component';
 import { GameComponent } from './game/game.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -25,7 +26,8 @@ const appRoutes: Routes =[
   { path: 'contacts', component: ContcontComponent},
   { path: 'news', component: NewsComponent},
   {path: 'about', component: ContabusComponent},
-  {path: 'game', component: GameComponent}
+  {path: 'game', component: GameComponent},
+  {path: '*', component: NotFoundComponent}
 ];
 
 @NgModule({
@@ -38,7 +40,8 @@ const appRoutes: Routes =[
     ContabusComponent,
     ContcontComponent,
     ContmainComponent,
-    GameComponent
+    GameComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

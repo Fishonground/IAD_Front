@@ -1,6 +1,16 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {User} from './regpage/user';
+import {HttpClient, HttpHeaders, HttpParams, HttpClientModule} from '@angular/common/http';
+import {User} from './dbclasses/User';
+
+/*const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':'application/x-www-form-urlencoded',
+    'Access-Control-Allow-Origin':'*',
+    'Authorization':'authkey',
+    'userid':'1'
+  })
+};*/
+
 
 @Injectable()
 export class HttpService{
@@ -8,7 +18,7 @@ export class HttpService{
   constructor(private http: HttpClient){ }
 
   postData(user: User){
-    const myHeaders = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    const myHeaders = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('Access-Control-Allow-Origin','*');
     //const myHeaders = new HttpHeaders().set('Content-Type', 'application/json');
     //const body = { username: JSON.stringify(user.username).toString(), password: JSON.stringify(user.password)};
     const body = { username: user.username, password: user.password};
@@ -19,6 +29,15 @@ export class HttpService{
     //JSON.parse(body);
     const str = "username=I%27ve+done+it&password=123";
     //^[^\`\\\}\{\^}][A-zА-я]{6,12}$
-    return this.http.post('http://localhost:8080/login', str,  {headers:myHeaders});
+    return this.http.post('http://localhost:8080/login', str,  {headers:myHeaders, withCredentials:true});
+  }
+  loginto(){
+    const myHeaders = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('Access-Control-Allow-Origin','*');
+    const str = "username=I%27ve+done+it&password=123";
+    return this.http.post('http://localhost:8080/login', str,  {headers:myHeaders, withCredentials: true});
+  }
+  getNews(){
+    return this.http.get('http://localhost:8080/api/news/all',{withCredentials: true});
+
   }
 }

@@ -44,7 +44,7 @@ export class RegpageComponent implements OnInit{
 */
 import { Component, OnInit} from '@angular/core';
 import { HttpService} from '../http.service';
-import {User} from './user';
+import {User} from '../dbclasses/User';
 
 @Component({
   selector: 'app-regpage',
