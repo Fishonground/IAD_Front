@@ -1,5 +1,7 @@
+import {Video} from "./Video";
+
 export class New{
   name: string;
   text: string;
-  video: number;
+  videosbyVideo: Video;
 }

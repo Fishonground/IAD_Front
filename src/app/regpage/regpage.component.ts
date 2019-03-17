@@ -56,6 +56,8 @@ export class RegpageComponent implements OnInit{
   ngOnInit(){
 
   }
+
+  //todo Login validation
   /*check(string pass){
     var Reg62 = new RegExp("^[^\`\\\}\{\^}][A-zА-я]{6,16}$"); //2
 
@@ -83,8 +85,9 @@ export class RegpageComponent implements OnInit{
   submit(user: User){
     this.httpService.postData(user)
       .subscribe(
-        (data: User) => {this.receivedUser=data; this.done=true;},
-        error => console.log(error)
+        (data: User) => {this.receivedUser=data; this.done=true; // todo redirect to previous page
+           }  ,
+        error => {console.log(error); alert("INCORRECT!!")}
       );
   }
 }

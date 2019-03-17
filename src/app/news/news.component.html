@@ -1,6 +1,8 @@
 <article class="main-page to-left">
-<p>
-  news works!
+  <p>Вам следует войти в систему, чтобы видеть новости!</p>
+  <p>Авторизируйтесь и повторите попытку!</p>
+  <p>
+
 
   <button (click)="reload()" class="login100-form-btn">
     Обновить новостную ленту!
@@ -12,7 +14,8 @@
   <li *ngFor="let receivedNew of receivedNews">
     <p>New's title: {{receivedNew?.name}}</p>
     <p>New's text: {{receivedNew?.text}}</p>
-    <p>Cam's ID: {{receivedNew?.video}}</p>
+    <!--todo here doesn't work input class!!!-->
+    <p>Cam's ID: {{receivedNew?.videosbyVideo?.id}}</p>
   </li>
 </ul>
 <div>

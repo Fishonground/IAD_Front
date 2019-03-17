@@ -37,7 +37,7 @@ export class NewsComponent implements OnInit {
     this.httpService.getNews()
       .subscribe(
         (data: New[] ) => {this.receivedNews=data; this.done=true;},
-        error => console.log(error)
+        error => alert("Ну мы же попросили!")
       );
 
 

@@ -53,28 +53,36 @@
 
   <div [ngSwitch]="but">
     <ng-template ngSwitchCase="Orders">
-      <p> Orders </p>
+      <p> Orders: </p>
+      <app-orders></app-orders>
     </ng-template>
     <ng-template ngSwitchCase="Factions">
       <p> Faction:  </p>
+      <app-factions></app-factions>
     </ng-template>
     <ng-template ngSwitchCase="Prisoners">
       <p> Prisoners: </p>
+      <app-prisoners></app-prisoners>
     </ng-template>
     <ng-template ngSwitchCase="Users">
       <p> Users:  </p>
+      <app-users></app-users>
     </ng-template>
     <ng-template ngSwitchCase="Rooms">
       <p> Rooms: </p>
+      <app-rooms></app-rooms>
     </ng-template>
     <ng-template ngSwitchCase="Mails">
       <p> Mails:  </p>
+      <app-messages></app-messages>
     </ng-template>
     <ng-template ngSwitchCase="Shop">
       <p> Shop: </p>
+      <app-shop></app-shop>
     </ng-template>
     <ng-template ngSwitchCase="Things">
       <p> Things:  </p>
+      <app-things></app-things>
     </ng-template>
     <ng-template ngSwitchCase="TEST">
       <p> Dorou? Have u sm pipa? Hard thing! </p>
