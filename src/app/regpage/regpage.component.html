@@ -1,7 +1,7 @@
 <article class="main-page to-left">
 <div class="limiter">
   <div class="container-login100">
-    <div class="wrap-login100">
+    <div class="wrap-login100" *ngIf="authpage">
       <form class="login100-form validate-form p-l-55 p-r-55 p-t-178">
 					<span class="login100-form-title">
 						Авторизация
@@ -16,14 +16,15 @@
           <input class="input100" type="password" name="password" placeholder="Пароль" [(ngModel)]="user.password">
           <span class="focus-input100"></span>
         </div>
-
+        <!--todo восстановление пароля-->
         <div class="text-right p-t-13 p-b-23">
 						<span class="txt1">
 							Забыли
 						</span>
 
-          <a href="#" class="txt2">
+          <a href="hello" class="txt2">
             Логин / Пароль??
+
           </a>
         </div>
 
@@ -38,8 +39,78 @@
 							Нет аккаунта?
 						</span>
 
-          <a href="#" class="txt3">
+          <a (click)="registrate()" class="txt3">
             Точно уверены, что он вам нужен?
+          </a>
+        </div>
+      </form>
+    </div>
+
+
+
+
+
+
+
+    <div class="wrap-login100" *ngIf="regpage">
+      <form class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+					<span class="login100-form-title">
+						Регистрация
+					</span>
+
+        <div class="wrap-input100 validate-input m-b-16" data-validate="Пожалуйста, введите имя!">
+          <input class="input100" type="text" name="username" placeholder="Имя" [(ngModel)]="crpeople.name"  >
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input m-b-16" data-validate="Пожалуйста, введите фамилию!">
+          <input class="input100" type="text" name="lastname" placeholder="Фамилия" [(ngModel)]="crpeople.surname"  >
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input m-b-16" data-validate="Пожалуйста, введите отчество!">
+          <input (keyup)="check(this)" class="input100" type="text" name="secname" placeholder="Отчество" [(ngModel)]="crpeople.second_name"  >
+          <span class="focus-input100"></span>
+        </div>
+
+
+        <div class="wrap-input100 validate-input m-b-16" data-validate = "Пожалуйста, введите дату рождения!">
+          <!--todo всплывающий календарик, а еще подсосать в работе стиль к кнопкам -->
+          <input class="input100" type="text" name="date" placeholder="01.01.0000" [(ngModel)]="crpeople.date_of_birth">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input m-b-16" data-validate="Пожалуйста, выберите гендер!">
+          <!--todo подсос с радиобаттона -->
+          <input (keyup)="check(this)" class="input100" type="text" name="gender" placeholder="Male-Female-Mixed-Up-Down-Trap" [(ngModel)]="crpeople.gender"  >
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input m-b-16" data-validate="Пожалуйста, введите логин!">
+          <input (keyup)="check(this)" class="input100" type="text" name="login" placeholder="Логин" [(ngModel)]="cruser.username"  >
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input m-b-16" data-validate="Пожалуйста, введите пароль!">
+          <input  class="input100" type="password" name="password" placeholder="Пароль" [(ngModel)]="cruser.password"  >
+          <span class="focus-input100"></span>
+        </div>
+
+
+
+        <div class="container-login100-form-btn">
+          <button (click)="createnew(cruser,crpeople)" class="login100-form-btn">
+            Ворваться
+          </button>
+        </div>
+
+        <div class="flex-col-c p-t-170 p-b-40">
+						<span class="txt1 p-b-9">
+							Нет аккаунта?
+						</span>
+
+          <a (click)="registrate()" class="txt3">
+            Теперь знаете, что не нужен?
           </a>
         </div>
       </form>
@@ -48,15 +119,5 @@
 </div>
 </article>
 
-                <!--div >
-                      <label>Имя</label>
-                  <input name="username" [(ngModel)]="user.username" />
-                </div>
-                <div >
-                      <label>Возраст</label>
-                      <input name="password" [(ngModel)]="user.password" />
-                </div>
-                <div >
-                      <button (click)="submit(user)">Отправить</button>
-                </div-->
+
                

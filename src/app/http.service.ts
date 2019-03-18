@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams, HttpClientModule} from '@angular/common/http';
 import {User} from './dbclasses/User';
+import {People} from "./dbclasses/People";
 
 /*const httpOptions = {
   headers: new HttpHeaders({
@@ -14,7 +15,7 @@ import {User} from './dbclasses/User';
 
 @Injectable()
 export class HttpService{
-
+  peopleid : number = 7;
   constructor(private http: HttpClient){ }
 
   postData(user: User){
@@ -39,5 +40,22 @@ export class HttpService{
   getNews(){
     return this.http.get('http://localhost:8080/api/news/all',{withCredentials: true});
 
+  }
+  createnewuser(crpeople : People , cruser : User){
+
+    const myHeaders = new HttpHeaders().set('Content-Type', 'application/json').set('Access-Control-Allow-Origin','*');
+    const str = {id : this.peopleid , name : crpeople.name , surname : crpeople.surname, second_name: crpeople.second_name , date_of_birth: crpeople.date_of_birth, gender:crpeople.gender, photo: "./ph"};
+    return this.http.post('http://localhost:8080/api/people', str, {headers:myHeaders, withCredentials: true});
+    const str2 = {
+      "password": cruser.password,
+      "login": cruser.username,
+      "usersStatusByStatus": {
+        "id": 10
+      },
+      "peopleByPeopleId": {
+        "id": this.peopleid
+      }
+    };
+    return this.http.post('http://localhost:8080/api/user', str2, {headers:myHeaders, withCredentials: true})
   }
 }

@@ -1,50 +1,8 @@
-/*import { Component, OnInit } from '@angular/core';
 
-@Component({
-  selector: 'app-regpage',
-  templateUrl: './regpage.component.html',
-  styleUrls: ['./regpage.component.css']
-})
-export class RegpageComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}*/
-/*import {Component, OnInit} from '@angular/core';
-import { HttpService} from '../http.service';
-import {Augth} from "../Augth";
-
-
-@Component({
-  selector: 'app-regpage',
-  templateUrl: './regpage.component.html',
-  styleUrls: ['./regpage.component.css'],
-  providers: [HttpService]
-})
-export class RegpageComponent implements OnInit{
-
-  ngOnInit(){alert("hj")}
-
-  augth: Augth=new Augth(); // данные вводимого пользователя
-
-  receivedAugth: Augth; // полученный пользователь
-  done: boolean = false;
-  constructor(private httpService: HttpService){}
-  submit(augth: Augth){
-    this.httpService.postData(augth)
-      .subscribe(
-        (data: Augth) => {this.receivedAugth=data; this.done=true;},
-        error => console.log(error)
-      );
-  }
-}
-*/
 import { Component, OnInit} from '@angular/core';
 import { HttpService} from '../http.service';
 import {User} from '../dbclasses/User';
+import {People} from "../dbclasses/People";
 
 @Component({
   selector: 'app-regpage',
@@ -53,8 +11,11 @@ import {User} from '../dbclasses/User';
   providers: [HttpService]
 })
 export class RegpageComponent implements OnInit{
+  authpage: boolean ;
+  regpage : boolean ;
   ngOnInit(){
-
+    this.authpage = true;
+    this.regpage = false;
   }
 
   //todo Login validation
@@ -78,10 +39,12 @@ export class RegpageComponent implements OnInit{
   }*/
 
   user: User=new User(); // данные вводимого пользователя
-
+  cruser: User = new User();
+  crpeople: People  = new People();
   receivedUser: User; // полученный пользователь
   done: boolean = false;
   constructor(private httpService: HttpService){}
+
   submit(user: User){
     this.httpService.postData(user)
       .subscribe(
@@ -89,5 +52,15 @@ export class RegpageComponent implements OnInit{
            }  ,
         error => {console.log(error); alert("INCORRECT!!")}
       );
+  }
+
+  registrate(){
+    this.regpage=!this.regpage;
+    this.authpage=!this.authpage;
+  }
+
+  createnew(cruser: User , crpeople : People){
+    this.httpService.createnewuser(crpeople,cruser)
+      .subscribe( (data: User) => {} , error=> {alert("A chto-to poshlo ne tak");})
   }
 }
