@@ -1,6 +1,6 @@
 export class Video{
   id: number;
-  cam_id: number;
+  camId: number;
   description: string;
   time: string;
 }

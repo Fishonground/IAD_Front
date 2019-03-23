@@ -43,12 +43,13 @@ export class RegpageComponent implements OnInit{
   crpeople: People  = new People();
   receivedUser: User; // полученный пользователь
   done: boolean = false;
+  auth: boolean = false;
   constructor(private httpService: HttpService){}
 
   submit(user: User){
     this.httpService.postData(user)
       .subscribe(
-        (data: User) => {this.receivedUser=data; this.done=true; // todo redirect to previous page
+        (data: User) => {this.receivedUser=data; this.done=true; this.auth=true;// todo redirect to previous page
            }  ,
         error => {console.log(error); alert("INCORRECT!!")}
       );
@@ -60,7 +61,13 @@ export class RegpageComponent implements OnInit{
   }
 
   createnew(cruser: User , crpeople : People){
-    this.httpService.createnewuser(crpeople,cruser)
-      .subscribe( (data: User) => {} , error=> {alert("A chto-to poshlo ne tak");})
+    this.httpService.createnewperson(crpeople)
+      .subscribe( (data: User) => {
+
+        this.httpService.createnewuser(crpeople,cruser)
+          .subscribe( (data: User) => {} , error=> {alert("A chto-to poshlo ne tak v usere");})
+
+
+      } , error=> {alert("A chto-to poshlo ne tak");})
   }
 }

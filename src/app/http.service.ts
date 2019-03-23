@@ -15,7 +15,7 @@ import {People} from "./dbclasses/People";
 
 @Injectable()
 export class HttpService{
-  peopleid : number = 7;
+  peopleid : number = 8;
   constructor(private http: HttpClient){ }
 
   postData(user: User){
@@ -41,21 +41,32 @@ export class HttpService{
     return this.http.get('http://localhost:8080/api/news/all',{withCredentials: true});
 
   }
-  createnewuser(crpeople : People , cruser : User){
+  getAllFraction(){
+    return this.http.get('http://localhost:8080/api/fraction/all',{withCredentials: true});
 
+  }
+
+  //todo check for every request 401 error
+  createnewperson(crpeople : People){
     const myHeaders = new HttpHeaders().set('Content-Type', 'application/json').set('Access-Control-Allow-Origin','*');
     const str = {id : this.peopleid , name : crpeople.name , surname : crpeople.surname, second_name: crpeople.second_name , date_of_birth: crpeople.date_of_birth, gender:crpeople.gender, photo: "./ph"};
-    return this.http.post('http://localhost:8080/api/people', str, {headers:myHeaders, withCredentials: true});
+   return this.http.post('http://localhost:8080/api/people', str, {headers:myHeaders, withCredentials: true});
+
+  }
+  //todo id +++
+  createnewuser(crpeople : People, cruser : User){
+    const myHeaders = new HttpHeaders().set('Content-Type', 'application/json').set('Access-Control-Allow-Origin','*');
     const str2 = {
-      "password": cruser.password,
-      "login": cruser.username,
-      "usersStatusByStatus": {
-        "id": 10
+      password: cruser.password,
+      login: cruser.username,
+      usersStatusByStatus: {
+        id: 10
       },
-      "peopleByPeopleId": {
-        "id": this.peopleid
+      peopleByPeopleId: {
+        id: this.peopleid
       }
     };
-    return this.http.post('http://localhost:8080/api/user', str2, {headers:myHeaders, withCredentials: true})
+    return this.http.post('http://localhost:8080/api/users', str2, {headers:myHeaders, withCredentials: true})
   }
+
 }

@@ -994,7 +994,10 @@ OPEN DAY TEMPLATE
   right: 23px;
   top: 236px;
 }
-
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 .gallery {
   text-align: center;
 }
@@ -1011,3 +1014,32 @@ OPEN DAY TEMPLATE
 }
 
 
+button.button8 {
+  display: inline-block;
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+  padding: .5em 2em;
+  outline: none;
+  border: 2px solid;
+  border-radius: 1px;
+  transition: 0.2s;
+}
+button.button8:hover { background: rgba(255,255,255,.2); }
+button.button8:active { background: black; }
+
+button.button7 {
+  display: inline-block;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+  padding: .5em 2em;
+  outline: none;
+  border: 2px solid;
+  border-radius: 1px;
+  transition: 0.2s;
+}
+button.button7:hover { background: rgba(255,255,255,.2); }
+button.button7:active { background: white; }

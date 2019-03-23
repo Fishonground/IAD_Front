@@ -5,6 +5,8 @@ import {error} from "selenium-webdriver";
 import {User} from "../dbclasses/User";
 import {HttpClient} from "@angular/common/http";
 
+import { DomSanitizer } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -13,7 +15,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class NewsComponent implements OnInit {
 
-  constructor(private httpService: HttpService, private http:HttpClient){}
+  constructor(private httpService: HttpService, private http:HttpClient, public sanitizer: DomSanitizer){}
   user: User;
   ngOnInit() {
   }
@@ -21,7 +23,7 @@ export class NewsComponent implements OnInit {
   receivedNews: New[]=[]; // received news
   done: boolean = false;
   receivedUser: User;
-  reload(){
+  reload() {
     // this.httpService.loginto().subscribe(    (data: User) => {
     //   this.receivedUser=data; this.done=true;
     //
@@ -36,11 +38,16 @@ export class NewsComponent implements OnInit {
 
     this.httpService.getNews()
       .subscribe(
-        (data: New[] ) => {this.receivedNews=data; this.done=true;},
+        (data: New[]) => {
+          this.receivedNews = data;
+          this.done = true;
+        },
         error => alert("Ну мы же попросили!")
       );
 
-
+  }
+  videoURL(i: number) {
+    return this.sanitizer.bypassSecurityTrustUrl(this.receivedNews[i].videosByVideo.description);
   }
 
 

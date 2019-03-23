@@ -24,6 +24,7 @@ import { RoomsComponent } from './gamecomp/rooms/rooms.component';
 import { MessagesComponent } from './gamecomp/messages/messages.component';
 import { ShopComponent } from './gamecomp/shop/shop.component';
 import { ThingsComponent } from './gamecomp/things/things.component';
+import { ContprisonerComponent } from './contprisoner/contprisoner.component';
 
 
 
@@ -35,6 +36,7 @@ const appRoutes: Routes =[
   { path: 'news', component: NewsComponent},
   {path: 'about', component: ContabusComponent},
   {path: 'game', component: GameComponent},
+  {path: 'prisoner', component: ContprisonerComponent},
   {path: '*', component: NotFoundComponent}
 ];
 
@@ -57,7 +59,8 @@ const appRoutes: Routes =[
     RoomsComponent,
     MessagesComponent,
     ShopComponent,
-    ThingsComponent
+    ThingsComponent,
+    ContprisonerComponent
   ],
   imports: [
     BrowserModule,
