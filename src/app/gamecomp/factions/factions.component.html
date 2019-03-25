@@ -1,7 +1,7 @@
 <div  class="div_abs">
-  <textarea *ngFor="let receivedFaction of receivedFactions" cols="50" class="input_abs">
-    Faction's name: {{receivedFaction?.name}}
-    Factions's rating: {{receivedFaction?.rating}}</textarea>
+  <textarea cols="50" class="input_abs" disabled>{{this.text}}
+  </textarea>
+
 </div>
 <article class="main-page to-left">
 
@@ -9,19 +9,24 @@
     <button (click)="bu1()" class="login100-form-btn">
       Получить список фракций
     </button>
+  </p>
+  <p>
     <button (click)="bu2()" class="login100-form-btn">
       Отсортировать по рейтингу
     </button>
+  </p>
+  <p>
     <button (click)="bu3()" class="login100-form-btn">
-      Еще какое-нибудь гавно
+      Найти фракцию:
     </button>
-    <button (click)="bu4()" class="login100-form-btn">
-      Посмотреть членов фракции
-    </button>
-    <button (click)="bu5()" class="login100-form-btn">
-      TEST
+    <input class="input100" type="text" name="frname" placeholder="Название" [(ngModel)]="fraction.name"  >
+  </p>
+  <p>
+    <button (click)="bu4()" class="login100-form-btn" disabled>
+      Здесть могла бы быть ваша реклама!
     </button>
   </p>
+
 
 
 

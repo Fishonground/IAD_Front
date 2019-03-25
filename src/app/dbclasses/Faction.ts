@@ -1,5 +1,8 @@
+import {Prisoner} from "./Prisoner";
+
 export class Faction{
   name: string;
-  main_person: number;
+  prisonerByMainPerson: Prisoner;
   rating: number;
+  prisonersByName : Prisoner[] = [];
 }

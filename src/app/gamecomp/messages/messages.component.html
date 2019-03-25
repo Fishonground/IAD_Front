@@ -1,3 +1,36 @@
-<p>
-  messages works!
-</p>
+<div  class="div_abs">
+  <textarea cols="50" class="input_abs" disabled>{{this.text}}
+  </textarea>
+
+</div>
+<article class="main-page to-left">
+
+  <p>
+    <button (click)="butto1()" class="login100-form-btn">
+      Список маляв, отправленных адресату:</button>
+      <input class="input100" name="messto" placeholder="Кому, id" [(ngModel)]="prisoner.personId"  >
+
+  </p>
+  <p>
+    <button (click)="butto3()" class="login100-form-btn">
+      Список маляв, отправленных адресантом: </button>
+      <input class="input100" name="messby" placeholder="От кого, login" [(ngModel)]="message.usersByUser.login"  >
+
+  </p>
+  <p>
+    <button (click)="butto2()" class="login100-form-btn">
+      Вкинуть маляву
+    </button>
+    <input class="input100" name="addrid" placeholder="Кому, id" [(ngModel)]="message.prisonerByPrisoner.personId"  >
+
+    <input class="input100" name="text" placeholder="Текст" [(ngModel)]="message.massege"  >
+  </p>
+  <p>
+    <button (click)="butt4()" class="login100-form-btn" disabled>
+      Здесть могла бы быть ваша реклама!
+    </button>
+  </p>
+
+
+</article>
+

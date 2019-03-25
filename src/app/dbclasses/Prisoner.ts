@@ -1,7 +1,9 @@
+import {Room} from "./Room";
+
 export class Prisoner{
-  id: number;
+  personId: number;
   term: string;
-  room: number;
+  roomsByRoom: Room;
   owner: string;
   rating: number;
   faction: string;

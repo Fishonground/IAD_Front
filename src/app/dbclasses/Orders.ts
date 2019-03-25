@@ -1,7 +1,11 @@
+import {Product} from "./Product";
+import {User} from "./User";
+import {Order_conditions} from "./Order_conditions";
+
 export class Orders{
   id: number;
-  product: string;
-  customer: string;
-  adressee_id: number;
-  condition: number;
+  productByProduct: Product;
+  usersByCustomer: User;
+  addresseeId: number;
+  orderConditionsByCondition: Order_conditions;
 }

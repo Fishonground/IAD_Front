@@ -1,3 +1,36 @@
-<p>
-  users works!
-</p>
+<div  class="div_abs">
+  <textarea cols="50" class="input_abs" disabled>{{this.text}}
+  </textarea>
+
+</div>
+<article class="main-page to-left">
+
+  <p>
+    <button (click)="but1()" class="login100-form-btn">
+      Просмотреть рейтинг юзеров
+    </button>
+  </p>
+  <p>
+    <button (click)="but2()" class="login100-form-btn" disabled>
+      Деавторизоваться
+    </button>
+  </p>
+  <p>
+    <button (click)="but3()" class="login100-form-btn">
+      Инвентарь зека
+    </button>
+    <input class="input100" type="number" name="orid" placeholder="id" [(ngModel)]="order.addresseeId"  >
+  </p>
+  <p>
+    <button (click)="but4()" class="login100-form-btn">
+      Потыкать своих зеков
+    </button>
+    <!-- todo input class="input100" type="text" name="ulog" placeholder="login" [(ngModel)]="order1.usersByCustomer.login" -->
+  </p>
+  <p>
+    <button (click)="but5()" class="login100-form-btn" disabled>
+      Здесть могло бы быть что-то еще!
+    </button>
+  </p>
+
+

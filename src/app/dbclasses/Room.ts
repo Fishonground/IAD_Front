@@ -1,5 +1,5 @@
 export class Room{
   id: number;
-  number_of_prisoners: number;
+  numberOfPrisoners: number;
   name: string;
 }

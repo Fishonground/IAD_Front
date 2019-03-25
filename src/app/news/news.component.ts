@@ -18,6 +18,7 @@ export class NewsComponent implements OnInit {
   constructor(private httpService: HttpService, private http:HttpClient, public sanitizer: DomSanitizer){}
   user: User;
   ngOnInit() {
+    this.reload();
   }
 
   receivedNews: New[]=[]; // received news

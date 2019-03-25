@@ -1,7 +1,11 @@
+import {User} from "./User";
+import {Prisoner} from "./Prisoner";
+import {Video} from "./Video";
+
 export class Messages{
   id: number;
-  user: string;
-  prisoner: number;
-  video: number;
-  message: string;
+  usersByUser: User;
+  prisonerByPrisoner: Prisoner;
+  videosByVideo: Video;
+  massege: string;
 }
