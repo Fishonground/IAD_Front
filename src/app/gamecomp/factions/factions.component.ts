@@ -29,7 +29,7 @@ export class FactionsComponent implements OnInit {
           this.receivedFactions = data;
           this.printer();
           this.done = true;
-        },
+          },
         error => alert("Ну мы же попросили!")
       );
 

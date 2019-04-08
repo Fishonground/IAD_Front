@@ -52,15 +52,14 @@ export class RoomsComponent implements OnInit {
     this.receivedRooms.forEach((receivedRoom) => {
       this.text += i + ". Room id: " + receivedRoom.id + ", " + receivedRoom.name + "\n" + "Number of prisoners: "
         + receivedRoom.numberOfPrisoners + "\n" + "Members: \n" ;
-      this.httpService.getAllPrisonersByRoom(receivedRoom)
-        .subscribe(
+        this.httpService.getAllPrisonersByRoom(receivedRoom)
+          .subscribe(
           (data: Prisoner[]) => {
-            this.receivedPrisoners = data;
             this.prprinter();
-            this.done = true;
-          },
-          error => this.text+="bla"//alert("Ну мы же попросили!") //todo rewrite without alerts
-        );
+            this.receivedPrisoners = data;
+            },
+          error => this.text+="Empty room\n"
+          );
       i++;
     });
   }
@@ -69,7 +68,7 @@ export class RoomsComponent implements OnInit {
     let i : number = 0;
     this.receivedPrisoners.forEach((receivedPr) => {
       this.text += i + ". Person id: " + receivedPr.personId + ", rating: " + receivedPr.rating + "\n" + " Faction: "
-        + receivedPr.faction + "\n" + " Room: " + receivedPr.roomsByRoom.id + ", " + receivedPr.roomsByRoom.name + "\n";
+        + receivedPr.factionByFaction + "\n" + " Room: " + receivedPr.roomsByRoom.id + ", " + receivedPr.roomsByRoom.name + "\n";
       i++;
     });
   }

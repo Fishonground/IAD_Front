@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthenticationService} from "../authentication.service";
+import {HttpService} from "../http.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  styleUrls: ['./main.component.css'],
+  providers: [HttpService,AuthenticationService]
 })
 export class MainComponent implements OnInit {
 
@@ -19,10 +22,15 @@ export class MainComponent implements OnInit {
   contactp=false;
   ddate = this.temp_date.getDate();
 
-  constructor() { }
+  constructor(private auth: AuthenticationService) { }
 
   ngOnInit() {
     this.mainp = true;
+
+
+  }
+  logout(){
+    this.auth.logout();
   }
 
 

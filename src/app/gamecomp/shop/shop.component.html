@@ -17,18 +17,36 @@
   </p>
   <p>
     <button (click)="but3()" class="login100-form-btn">
-      Заказать что-то для зека
+      Заказать товар зеку:
     </button>
-    <input class="input100" type="number" name="orid" placeholder="id" [(ngModel)]="order.addresseeId"  >
+    <input class="input100" type="number" name="orid1" placeholder="id" [(ngModel)]="toz"  >
+    <input class="input100" type="text" name="orid2" placeholder="product" [(ngModel)]="forz"  >
+    <input class="input100" type="number" name="orid3" placeholder="count" [(ngModel)]="howz"  >
   </p>
   <p>
     <button (click)="but4()" class="login100-form-btn">
+      Добавить товар:
+    </button>
+    <input class="input100" type="text" name="orid4" placeholder="name" [(ngModel)]="prn"  >
+    <input class="input100" type="number" name="orid5" placeholder="price" [(ngModel)]="prpr"  >
+    <input class="input100" type="number" name="orid6" placeholder="count" [(ngModel)]="prc"  >
+    <input class="input100" type="number" name="orid7" placeholder="authority" [(ngModel)]="pra"  >
+  </p>
+  <p>
+    <button (click)="but5()" class="login100-form-btn">
+      Изменить состояние товара:
+    </button>
+    <input class="input100" type="number" name="orid8" placeholder="order id" [(ngModel)]="ord"  >
+    <input class="input100" type="number" name="orid9" placeholder="new cond id" [(ngModel)]="ordcond"  >
+  </p>
+  <p>
+    <button (click)="but6()" class="login100-form-btn">
       Ыыыыыы
     </button>
     <!-- todo input class="input100" type="text" name="ulog" placeholder="login" [(ngModel)]="order1.usersByCustomer.login" -->
   </p>
   <p>
-    <button (click)="but5()" class="login100-form-btn" disabled>
+    <button (click)="but7()" class="login100-form-btn" disabled>
       Здесть могла бы быть ваша реклама!
     </button>
   </p>

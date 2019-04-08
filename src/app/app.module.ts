@@ -25,6 +25,7 @@ import { MessagesComponent } from './gamecomp/messages/messages.component';
 import { ShopComponent } from './gamecomp/shop/shop.component';
 import { ThingsComponent } from './gamecomp/things/things.component';
 import { ContprisonerComponent } from './contprisoner/contprisoner.component';
+import {AuthGuard} from "./auth.guard";
 
 
 
@@ -33,9 +34,9 @@ const appRoutes: Routes =[
   { path: 'main', component: ContmainComponent},
   { path: 'login', component: RegpageComponent},
   { path: 'contacts', component: ContcontComponent},
-  { path: 'news', component: NewsComponent},
+  { path: 'news', component: NewsComponent, canActivate: [AuthGuard]},
   {path: 'about', component: ContabusComponent},
-  {path: 'game', component: GameComponent},
+  {path: 'game', component: GameComponent, canActivate: [AuthGuard]},
   {path: 'prisoner', component: ContprisonerComponent},
   {path: '*', component: NotFoundComponent}
 ];
@@ -70,7 +71,7 @@ const appRoutes: Routes =[
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [MainComponent]
 })
 export class AppModule { }

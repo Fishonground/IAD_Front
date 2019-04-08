@@ -1,28 +1,102 @@
+<div  class="div_abs">
+  <textarea cols="50" class="input_abs" disabled>{{this.text}}
+  </textarea>
 
+</div>
   <!--todo prisoners interface -->
   <article class="main-page to-left">
 
     <p>
-      <button (click)="but1()" class="login100-form-btn">
+      <button (click)="but0()" class="login100-form-btn">
         Просмотреть рейтинг зеков
       </button>
     </p>
+
     <p>
-      <button (click)="but2()" class="login100-form-btn" disabled>
+      <button (click)="but1()" class="login100-form-btn" >
         Войти за зека:
       </button>
-      <input class="input100" type="number" name="orid" placeholder="id" [(ngModel)]="bla"  >
+      <input class="input100" type="number" name="orid" placeholder="id" [(ngModel)]="zid"  >
+    </p>
+
+    <p>
+      <button (click)="but2()" class="login100-form-btn" >
+        Сменить Имя:
+      </button>
+      <input class="input100" type="text" name="orid1" placeholder="username" [(ngModel)]="newname"  >
+    </p>
+
+    <p>
+    <button (click)="but3()" class="login100-form-btn" >
+      Сменить Фамилию:
+    </button>
+    <input class="input100" type="text" name="orid2" placeholder="username" [(ngModel)]="newsurname"  >
+
+  </p>
+
+    <p><button (click)="but4()" class="login100-form-btn" >
+    Сменить Отчество:
+  </button>
+    <input class="input100" type="text" name="orid3" placeholder="username" [(ngModel)]="newsecname"  >
+
+  </p>
+
+    <p><button (click)="but5()" class="login100-form-btn" >
+    Сменить пол (ха-ха):
+  </button>
+    <input class="input100" type="text" name="orid4" placeholder="gender" [(ngModel)]="newgender"  >
+
+  </p>
+    <p>
+      <button (click)="but12()" class="login100-form-btn">
+        Просмотреть свои малявы
+      </button>
     </p>
     <p>
-      <button (click)="but3()" class="login100-form-btn">
+      <button (click)="but6()" class="login100-form-btn">
         Вкинуть новость:
       </button>
-      <input class="input100" type="number" name="ord" placeholder="id" [(ngModel)]="bla"  >
+      <input class="input100" type="text" name="orid5" placeholder="name" [(ngModel)]="nnn"  >
+      <input class="input100" type="text" name="orid10" placeholder="text" [(ngModel)]="nnt"  >
+      <input class="input100" type="number" name="orid13" placeholder="video cam id" [(ngModel)]="nnvci"  >
+      <input class="input100" type="text" name="orid14" placeholder="video description" [(ngModel)]="nnvd"  >
+      <input class="input100" type="text" name="orid15" placeholder="video time 2012-12-21" [(ngModel)]="nnvt"  >
     </p>
+
     <p>
-      <button (click)="but5()" class="login100-form-btn" disabled>
-        Здесь мог бы быть блок управления вашей фракцией, если бы вы были ее паханом
+      <button (click)="but7()" class="login100-form-btn" disabled >
+        Изменить название вашей фракции
       </button>
+      <input class="input100" type="text" name="orid6" placeholder="name" [(ngModel)]="frnn"  >
     </p>
+
+    <p>
+      <button (click)="but8()" class="login100-form-btn" >
+        Изменить главаря вашей фракции
+      </button>
+      <input class="input100" type="text" name="orid7" placeholder="id" [(ngModel)]="frnmp"  >
+    </p>
+
+    <p>
+      <button (click)="but9()" class="login100-form-btn">
+        Сменить фракцию(войти тоже сюда)
+      </button>
+      <input class="input100" type="text" name="orid8" placeholder="name" [(ngModel)]="nfr"  >
+    </p>
+
+    <p>
+      <button (click)="but10()" class="login100-form-btn">
+        Удалить из фракции
+      </button>
+      <input class="input100" type="text" name="orid9" placeholder="id" [(ngModel)]="prid"  >
+    </p>
+
+    <p>
+      <button (click)="but11()" class="login100-form-btn">
+        Создать фракцию
+      </button>
+      <input class="input100" type="text" name="orid12" placeholder="name" [(ngModel)]="nfrn"  >
+    </p>
+
 
   </article>

@@ -69,14 +69,14 @@
         </div>
 
         <div class="wrap-input100 validate-input m-b-16" data-validate="Пожалуйста, введите отчество!">
-          <input (keyup)="check(this)" class="input100" type="text" name="secname" placeholder="Отчество" [(ngModel)]="crpeople.second_name"  >
+          <input (keyup)="check(this)" class="input100" type="text" name="secname" placeholder="Отчество" [(ngModel)]="crpeople.secondName"  >
           <span class="focus-input100"></span>
         </div>
 
 
         <div class="wrap-input100 validate-input m-b-16" data-validate = "Пожалуйста, введите дату рождения!">
           <!--todo всплывающий календарик, а еще подсосать в работе стиль к кнопкам -->
-          <input class="input100" type="text" name="date" placeholder="01.01.0000" [(ngModel)]="crpeople.date_of_birth">
+          <input class="input100" type="date" name="date" placeholder="01.01.0000" [(ngModel)]="crpeople.dateOfBirth">
           <span class="focus-input100"></span>
         </div>
 

@@ -11,26 +11,63 @@
     </button>
   </p>
   <p>
-    <button (click)="but2()" class="login100-form-btn" disabled>
-      Деавторизоваться
-    </button>
-  </p>
-  <p>
     <button (click)="but3()" class="login100-form-btn">
-      Инвентарь зека
+      Инвентарь Вашего зека
     </button>
-    <input class="input100" type="number" name="orid" placeholder="id" [(ngModel)]="order.addresseeId"  >
+    <input class="input100" type="number" name="orid" placeholder="id" [(ngModel)]="some"  >
   </p>
   <p>
     <button (click)="but4()" class="login100-form-btn">
       Потыкать своих зеков
     </button>
-    <!-- todo input class="input100" type="text" name="ulog" placeholder="login" [(ngModel)]="order1.usersByCustomer.login" -->
   </p>
   <p>
-    <button (click)="but5()" class="login100-form-btn" disabled>
-      Здесть могло бы быть что-то еще!
+    <button (click)="but5()" class="login100-form-btn" >
+      Добавить еще одного зека
     </button>
+    <input class="input100" type="text" name="orid" placeholder="Name" [(ngModel)]="person.name"  >
+    <input class="input100" type="text" name="orid1" placeholder="Surname" [(ngModel)]="person.surname"  >
+    <input class="input100" type="text" name="orid2" placeholder="Second name" [(ngModel)]="person.secondName"  >
+    <input class="input100" type="text" name="orid3" placeholder="Gender" [(ngModel)]="person.gender"  >
+    <input class="input100" type="text" name="orid4" placeholder="DateOfBirth 2012-12-20" [(ngModel)]="person.dateOfBirth"  >
+    <input class="input100" type="date" name="orid5" placeholder="Term 2012-12-20" [(ngModel)]="prisoner.term"  >
+  </p>
+  <p>
+    <button (click)="but6()" class="login100-form-btn" >
+      Сменить логин!
+    </button>
+    <input class="input100" type="text" name="orid6" placeholder="username" [(ngModel)]="newlogin"  >
+  </p><p>
+    <button (click)="but7()" class="login100-form-btn" disabled>
+      Удалиться!
+    </button>
+  </p><p>
+    <button (click)="but8()" class="login100-form-btn" >
+      Сменить комнату своему зеку:
+    </button>
+    <input class="input100" type="text" name="orid7" placeholder="id" [(ngModel)]="zk"  >
+    <input class="input100" type="number" name="orid9" placeholder="newroom" [(ngModel)]="newroom"  >
+</p><p>
+  <button (click)="but9()" class="login100-form-btn" >
+      Сменить Имя:
+    </button>
+    <input class="input100" type="text" name="orid10" placeholder="username" [(ngModel)]="newname"  >
+</p><p>
+  <button (click)="but10()" class="login100-form-btn" >
+      Сменить Фамилию:
+    </button>
+    <input class="input100" type="text" name="orid11" placeholder="username" [(ngModel)]="newsurname"  >
+
+</p><p><button (click)="but11()" class="login100-form-btn" >
+      Сменить Отчество:
+    </button>
+    <input class="input100" type="text" name="orid12" placeholder="username" [(ngModel)]="newsecname"  >
+
+</p><p><button (click)="but12()" class="login100-form-btn" >
+      Сменить пол (ха-ха):
+    </button>
+    <input class="input100" type="text" name="orid13" placeholder="gender" [(ngModel)]="newgender"  >
+
   </p>
 
-
+</article>

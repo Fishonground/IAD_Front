@@ -1,6 +1,6 @@
 export class Thing{
   name: string;
-  descripton: string;
+  description: string;
   price: number;
   owner: number;
   }

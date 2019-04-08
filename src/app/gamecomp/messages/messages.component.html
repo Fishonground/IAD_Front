@@ -8,20 +8,20 @@
   <p>
     <button (click)="butto1()" class="login100-form-btn">
       Список маляв, отправленных адресату:</button>
-      <input class="input100" name="messto" placeholder="Кому, id" [(ngModel)]="prisoner.personId"  >
+      <input class="input100" name="messto" placeholder="Кому, id" [(ngModel)]="prisoner1.personId"  >
 
   </p>
   <p>
     <button (click)="butto3()" class="login100-form-btn">
       Список маляв, отправленных адресантом: </button>
-      <input class="input100" name="messby" placeholder="От кого, login" [(ngModel)]="message.usersByUser.login"  >
+      <input class="input100" name="messby" placeholder="От кого, login" [(ngModel)]="user1.login"  >
 
   </p>
   <p>
     <button (click)="butto2()" class="login100-form-btn">
       Вкинуть маляву
     </button>
-    <input class="input100" name="addrid" placeholder="Кому, id" [(ngModel)]="message.prisonerByPrisoner.personId"  >
+    <input class="input100" name="addrid" placeholder="Кому, id" [(ngModel)]="prisoner.personId"  >
 
     <input class="input100" name="text" placeholder="Текст" [(ngModel)]="message.massege"  >
   </p>

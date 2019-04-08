@@ -5,26 +5,33 @@ import {Orders} from "../../dbclasses/Orders";
 import {Messages} from "../../dbclasses/Messages";
 import {Prisoner} from "../../dbclasses/Prisoner";
 import {User} from "../../dbclasses/User";
+import {Video} from "../../dbclasses/Video";
+import {AuthenticationService} from "../../authentication.service";
 
 @Component({
   selector: 'app-messages',
   templateUrl: './messages.component.html',
   styleUrls: ['./messages.component.css'],
-  providers: [HttpService]
+  providers: [HttpService, AuthenticationService]
 })
 export class MessagesComponent implements OnInit {
 
-  constructor(private httpService: HttpService, private http:HttpClient) { }
+  constructor(private httpService: HttpService, private http:HttpClient, private auth: AuthenticationService) { }
   ngOnInit() {
   }
   receivedMessages: Messages[]=[]; // received news
+  receivedUser : User;
   done: boolean = false;
   text : string = "";
   prisoner : Prisoner =new Prisoner;
-  user : User = new User();
+  prisoner1 : Prisoner = new Prisoner;
+  user : User = new User;
+  user1: User = new User;
+  video : Video = new Video;
   message : Messages = new Messages;
+
   butto1(){
-    this.httpService.getAllMessageByReceiver(this.prisoner)
+    this.httpService.getAllMessageByReceiver(this.prisoner1)
       .subscribe(
         (data: Messages[]) => {
           this.receivedMessages = data;
@@ -44,19 +51,25 @@ export class MessagesComponent implements OnInit {
     });
   }
   butto2(){
-    this.httpService.createnewmessage(this.message)
-      .subscribe(
-        (data: Messages[]) => {
-          this.receivedMessages = data;
-          this.printer();
-          this.done = true;
-        },
-        error => alert("Ну мы же попросили!")
-      );
+    //alert(this.user1.login);
+    //this.httpService.getVideoById()
+    this.httpService.getPrisonerById(this.prisoner).subscribe((data2: Prisoner) => {this.prisoner=data2;
+        this.httpService.createnewmessage(this.message, this.prisoner,this.user,this.video)
+          .subscribe(
+            (data: Messages[]) => {
+              this.receivedMessages = data;
+              //this.printer();
+              this.done = true;
+            },
+            error => alert("Ну епта!")
+          );}
+     , error => alert('Prisoner not found'))
+
+
 
   }
   butto3(){
-    this.httpService.getAllMessageBySender(this.message)
+    this.httpService.getAllMessageBySender(this.user1)
       .subscribe(
         (data: Messages[]) => {
           this.receivedMessages = data;

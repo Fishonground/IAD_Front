@@ -1,0 +1,10 @@
+.div_abs{
+  position: absolute;
+  top: 25%;
+  left: 60%;
+}
+.input_abs{
+  overflow: auto;
+  height: 510px;
+  resize: none;
+}

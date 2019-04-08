@@ -11,6 +11,7 @@
     </button>
   </p>
   <p>
+    <!--todo через нг прайм наверное? А кинуть маляву всей фракции в окошке управления фракцией у зеков  -->
     <button (click)="but2()" class="login100-form-btn" disabled>
       Рейтинг зеков
     </button>
@@ -19,10 +20,10 @@
     <button (click)="but3()" class="login100-form-btn">
       Зеки по фракциям
     </button>
-    <input class="input100" type="number" name="orid" placeholder="id" [(ngModel)]="order.addresseeId"  >
+    <input class="input100"  name="orid" placeholder="Fraction" [(ngModel)]="fraction"  >
   </p>
   <p>
-    <button (click)="but4()" class="login100-form-btn">
+    <button (click)="but4()" class="login100-form-btn" disabled>
       Ссылка на вкинуть маляву (всей фракции своего зека, например)
     </button>
     <!-- todo input class="input100" type="text" name="ulog" placeholder="login" [(ngModel)]="order1.usersByCustomer.login" -->

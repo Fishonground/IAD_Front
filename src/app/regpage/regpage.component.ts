@@ -3,12 +3,13 @@ import { Component, OnInit} from '@angular/core';
 import { HttpService} from '../http.service';
 import {User} from '../dbclasses/User';
 import {People} from "../dbclasses/People";
+import {AuthenticationService} from "../authentication.service";
 
 @Component({
   selector: 'app-regpage',
   templateUrl: './regpage.component.html',
   styleUrls: ['./regpage.component.css'],
-  providers: [HttpService]
+  providers: [HttpService, AuthenticationService]
 })
 export class RegpageComponent implements OnInit{
   authpage: boolean ;
@@ -43,16 +44,17 @@ export class RegpageComponent implements OnInit{
   crpeople: People  = new People();
   receivedUser: User; // полученный пользователь
   done: boolean = false;
-  auth: boolean = false;
-  constructor(private httpService: HttpService){}
+  constructor(private httpService: HttpService, private auth:AuthenticationService){}
 
   submit(user: User){
-    this.httpService.postData(user)
+    this.auth.loginto(user);
+    console.log(localStorage.getItem("currentUser"));
+    /*this.httpService.postData(user)
       .subscribe(
         (data: User) => {this.receivedUser=data; this.done=true; this.auth=true;// todo redirect to previous page
            }  ,
         error => {console.log(error); alert("INCORRECT!!")}
-      );
+      );*/
   }
 
   registrate(){
@@ -63,7 +65,7 @@ export class RegpageComponent implements OnInit{
   createnew(cruser: User , crpeople : People){
     this.httpService.createnewperson(crpeople)
       .subscribe( (data: User) => {
-
+        this.cruser.peopleByPeopleId = data.peopleByPeopleId;
         this.httpService.createnewuser(crpeople,cruser)
           .subscribe( (data: User) => {} , error=> {alert("A chto-to poshlo ne tak v usere");})
 
